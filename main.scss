@@ -1,0 +1,320 @@
+/*
+    Date Created: May 27 2018
+    CSS code for portfolio website
+    Updated: Sept 5 2021
+*/
+
+
+/*******************
+*
+*
+*
+* BG COLOR AND FONT FOR ENTIRE SITE
+*
+*
+*
+*******************/
+html {
+  font-family: myfont, Arial;
+  margin: 0;
+}
+
+body {
+    background: #e4f7fe;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+head {
+    position: fixed;
+    left: 30px;
+    down: 30px;
+}
+
+footer {
+    color: gray;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+}
+
+footer a {
+    text-decoration: none;
+    color: #3b91f7;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: myfont, arial;
+    box-sizing: border-box;
+}
+
+/*******************
+*
+*
+*
+* NAVIGATION BAR SPECS
+*
+*
+*
+*******************/
+.header {
+    height: 70px;
+    // background: #e5e5e5;
+    background: rbga(0, 0, 0, 0.5);
+    padding: 0 20px;
+}
+
+.logo::before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.logo {
+     float: left;
+     padding-bottom: 5px;
+}
+
+.logo h2 {
+    color: #3b91f7;
+}
+
+.logo h6 {
+    color: gray;
+    font-weight: normal;
+}
+
+.index-menu {
+    line-height: 100px;
+}
+
+.index-menu a {
+    color: #3b91f7;
+    text-decoration: none;
+    padding: 0 10px;
+    transition: 0.4s;
+}
+
+.index-menu a:hover {
+    color: #f5b940;
+}
+
+
+.menu {
+    float: right;
+    line-height: 70px;
+}
+
+.menu a {
+    color: #3b91f7;
+    text-decoration: none;
+    padding: 0 10px;
+    transition: 0.4s;
+}
+
+.show-menu-btn, .hide-menu-btn {
+    transition: 0.4s;
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+}
+
+.show-menu-btn {
+    float: right;
+}
+
+.show-menu-btn i {
+    line-height: 70px;
+}
+
+.menu a:hover,
+.show-menu-btn,
+.hide-menu-btn {
+    color: #f5b940;
+}
+
+#chk {
+    position: absolute;
+    visibility: hidden;
+    z-index: -1111;
+}
+
+@media screen and (max-width:800px){
+    .show-menu-btn, .hide-menu-btn {
+        display: block;
+    }
+    .menu {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #e4f7fe;
+        right: -100%;
+        top: 0;
+        text-align: center;
+        padding: 80px 0;
+        line-height: normal;
+        transition: 0.7s;
+    }
+
+    .menu a {
+        display: block;
+        padding: 20px;
+    }
+
+    .hide-menu-btn {
+        position: absolute;
+        top: 40px;
+        right: 40px;
+    }
+    #chk:checked ~ .menu {
+        right: 0;
+    }
+}
+
+/*******************
+*
+*
+*
+* SPECS FOR "ABOUT + SKILLS" PAGE CONTENT
+*
+*
+*
+*******************/
+.content .about-content {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin: auto;
+    text-align: center;
+}
+
+.content .about-content p {
+    max-width: 1000px;
+    min-width: 250px;
+    text-align: center;
+    line-height: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.content .about-content #portrait {
+    width: 100%;
+    max-width: 700px;
+    display: block;
+    margin: auto;
+    padding-bottom: 30px;
+}
+
+.content .about-content .daniel-bio {
+    padding: 30px;
+    color: white;
+    background-color: black;
+    font-size: 80%;
+}
+
+.content .about-content #resume {
+    padding: 30px;
+}
+
+.content .about-content .resume-item {
+    padding: 10px;
+    font-weight: normal;
+    background-size: contain;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.content .about-content .resume-item a {
+    text-decoration: none;
+    color: #3b91f7;
+}
+
+.content .about-content #resume .resume-section {
+    padding-top: 10px;
+}
+
+.content .about-content #resume .resume-section h3 {
+    padding: 5px;
+    color: white;
+    background: #51cc86;
+    // background: #7abca4;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*******************
+*
+*
+*
+* PHOTO PAGE PHOTO GALLERY BOX
+*
+*
+*
+*******************/
+.gallery-section {
+    width: 100%;
+    padding: 60px 0;
+    margin: auto;
+    text-align: center;
+}
+
+.inner-width {
+    width: 100%;
+    max-width: 2000px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.content .gallery-section img {
+    width: 100%;
+    margin: 10px 10px;
+}
+
+.gallery-section h1 {
+    text-align: center;
+    text-transform: uppercase;
+    color: black;
+}
+
+.inner-width .border {
+    width: 100px;
+    height: 4px;
+    background: black;
+    margin: 60px auto;
+}
+
+.gallery-section .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery-section .image {
+    flex: 25%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.gallery-section .image img {
+    object-fit: cover;
+    width: 220px;
+    height: 220px;
+    overflow: hidden;
+    transition:  0.4s;
+}
+
+.gallery-section .image:hover img {
+    transform: scale(1.2);
+}
+
+@media screen and (max-width: 480px) {
+    .gallery-section .image {
+        flex: 100%;
+    }
+}
