@@ -30,7 +30,7 @@ body {
 head {
     position: fixed;
     left: 30px;
-    down: 30px;
+    bottom: 30px;
 }
 
 footer {
@@ -66,6 +66,10 @@ footer a {
     // background: #e5e5e5;
     background: rbga(0, 0, 0, 0.5);
     padding: 0 20px;
+    // padding-left: 80px;
+    // padding-right: 80px;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 .logo::before {
@@ -180,7 +184,7 @@ footer a {
 *
 *
 *
-* SPECS FOR "ABOUT + SKILLS" PAGE CONTENT
+* SPECS FOR ABOUT/ME PAGE CONTENT
 *
 *
 *
@@ -223,6 +227,7 @@ footer a {
 
 .content .about-content .resume-item {
     padding: 10px;
+    max-width: 700px;
     font-weight: normal;
     background-size: contain;
     margin-left: auto;
@@ -241,16 +246,9 @@ footer a {
 .content .about-content #resume .resume-section h3 {
     padding: 5px;
     color: white;
-    background: #51cc86;
+    background: #58cdeb;
     // background: #7abca4;
-    max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.content .code-content .github-widget {
-    padding: 60px 0;
-    max-width: 80%;
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -259,7 +257,7 @@ footer a {
 *
 *
 *
-* PHOTO PAGE PHOTO GALLERY BOX
+* SPECS FOR PHOTO PAGE PHOTO GALLERY BOX
 *
 *
 *
@@ -278,10 +276,10 @@ footer a {
     padding: 0 20px;
 }
 
-.content .gallery-section img {
-    width: 100%;
-    margin: 10px 10px;
-}
+// .content .gallery-section img {
+//     width: 100%;
+//     margin: 10px 10px;
+// }
 
 .gallery-section h1 {
     text-align: center;
@@ -310,10 +308,33 @@ footer a {
 
 .gallery-section .image img {
     object-fit: cover;
-    width: 220px;
-    height: 220px;
     overflow: hidden;
     transition:  0.4s;
+}
+
+/* Vary size of photos based on size of screen */
+@media (max-width: 700px) {
+    .gallery-section .image img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .content .gallery-section img {
+        width: 50%;
+        margin: 0px 0px;
+    }
+}
+
+@media (min-width: 700px) {
+    .gallery-section .image img {
+        width: 220px;
+        height: 220px;
+    }
+
+    .content .gallery-section img {
+        // width: 100%;
+        margin: 10px 10px;
+    }
 }
 
 .gallery-section .image:hover img {
@@ -324,4 +345,21 @@ footer a {
     .gallery-section .image {
         flex: 100%;
     }
+}
+
+
+/*******************
+*
+*
+*
+* SPECS FOR CODE PAGE WIDGETS
+*
+*
+*
+*******************/
+.content .code-content .github-widget {
+    padding: 60px 0;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }
