@@ -1,7 +1,7 @@
 <!--
     Date created: May 27 2018
     Photo page code for daniellevert.com
-    Last Updated: Sept 24 2023
+    Last Updated: Jan 16 2024
 -->
 
 <!DOCTYPE HTML>
@@ -56,12 +56,12 @@
                     <div id="gallery">
                         <script>
                             var gallery = document.getElementById("gallery");
-                            for (var i = 0; i < 29; i++) {
+                            for (var i = 27; i >= 0; i--) {
                                 var a = document.createElement('a');
                                 a.className = "image";
-                                a.href = `images/${i+1}.jpg`;
+                                a.href = `images/photo-page/${i}.jpg`;
                                 var img = document.createElement('img');
-                                img.src = `images/${i+1}.jpg`;
+                                img.src = `images/photo-page/${i}.jpg`;
                                 img.alt = "";
                                 a.appendChild(img);
                                 gallery.appendChild(a);
